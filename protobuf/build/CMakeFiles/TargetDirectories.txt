@@ -1,5 +1,0 @@
-/home/skyee/carto_test/protobuf/build/CMakeFiles/js_embed.dir
-/home/skyee/carto_test/protobuf/build/CMakeFiles/libprotobuf.dir
-/home/skyee/carto_test/protobuf/build/CMakeFiles/libprotobuf-lite.dir
-/home/skyee/carto_test/protobuf/build/CMakeFiles/libprotoc.dir
-/home/skyee/carto_test/protobuf/build/CMakeFiles/protoc.dir
