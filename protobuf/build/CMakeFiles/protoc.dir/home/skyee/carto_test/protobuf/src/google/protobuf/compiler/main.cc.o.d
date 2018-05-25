@@ -1,0 +1,24 @@
+CMakeFiles/protoc.dir/home/skyee/carto_test/protobuf/src/google/protobuf/compiler/main.cc.o: \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/main.cc \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/command_line_interface.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/common.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/port.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/platform_macros.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/macros.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/logging.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/scoped_ptr.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/mutex.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/callback.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/type_traits.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/template_util.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/stubs/hash.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/cpp/cpp_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/code_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/python/python_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/java/java_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/csharp/csharp_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/javanano/javanano_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/js/js_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/objectivec/objectivec_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/php/php_generator.h \
+ /home/skyee/carto_test/protobuf/src/google/protobuf/compiler/ruby/ruby_generator.h
