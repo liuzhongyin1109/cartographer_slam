@@ -92,7 +92,10 @@ class PoseGraph2D : public PoseGraph {
   void AddLandmarkData(int trajectory_id,
                        const sensor::LandmarkData& landmark_data) override
       EXCLUDES(mutex_);
-
+			
+  //ADD BY LZY 20190327
+  void IsAddGlobalConstraint(bool& flag) REQUIRES(mutex_);
+	
   void FinishTrajectory(int trajectory_id) override;
   bool IsTrajectoryFinished(int trajectory_id) override REQUIRES(mutex_);
   void FreezeTrajectory(int trajectory_id) override;
@@ -236,7 +239,7 @@ class PoseGraph2D : public PoseGraph {
 
   // Whether the optimization has to be run before more data is added.
   bool run_loop_closure_ GUARDED_BY(mutex_) = false;
-
+  bool isGlobalMatch; //ADD BY LZY 20190327
   // Schedules optimization (i.e. loop closure) to run.
   void DispatchOptimization() REQUIRES(mutex_);
 

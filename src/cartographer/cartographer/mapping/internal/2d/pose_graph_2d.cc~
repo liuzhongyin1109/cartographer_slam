@@ -47,7 +47,9 @@ PoseGraph2D::PoseGraph2D(
     : options_(options),
       global_slam_optimization_callback_(global_slam_optimization_callback),
       optimization_problem_(std::move(optimization_problem)),
-      constraint_builder_(options_.constraint_builder_options(), thread_pool) {}
+      constraint_builder_(options_.constraint_builder_options(), thread_pool) {
+				isGlobalMatch = false;
+			}
 
 PoseGraph2D::~PoseGraph2D() {
   WaitForAllComputations();
@@ -204,6 +206,15 @@ void PoseGraph2D::ComputeConstraint(const NodeId& node_id,
           last_connection_time +
               common::FromSeconds(
                   options_.global_constraint_search_after_n_seconds())) {
+		if(isGlobalMatch == true)
+		{  
+			 //LOG(ERROR) << "add constraint local : isGlobalMatch =  "  <<  isGlobalMatch ;
+			 constraint_builder_.MaybeAddGlobalConstraint(
+       submap_id, submap_data_.at(submap_id).submap.get(), node_id,
+       trajectory_nodes_.at(node_id).constant_data.get());
+			 return;
+		}
+		
     // If the node and the submap belong to the same trajectory or if there
     // has been a recent global constraint that ties that node's trajectory to
     // the submap's trajectory, it suffices to do a match constrained to a
@@ -417,6 +428,15 @@ void PoseGraph2D::WaitForAllComputations() {
         notification = true;
       });
   locker.Await([&notification]() { return notification; });
+}
+
+//ADD BY LZY 
+void PoseGraph2D::IsAddGlobalConstraint(bool& flag)
+{
+	if(flag == true)
+		isGlobalMatch = true;
+	else
+		isGlobalMatch = false;
 }
 
 void PoseGraph2D::FinishTrajectory(const int trajectory_id) {

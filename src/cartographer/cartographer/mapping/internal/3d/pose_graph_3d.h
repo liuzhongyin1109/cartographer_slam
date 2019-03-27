@@ -197,7 +197,8 @@ class PoseGraph3D : public PoseGraph {
   // Runs the optimization. Callers have to make sure, that there is only one
   // optimization being run at a time.
   void RunOptimization() EXCLUDES(mutex_);
-
+	//ADD BY LZY 20190327
+  void IsAddGlobalConstraint(bool& flag) REQUIRES(mutex_) override;
   // Computes the local to global map frame transform based on the given
   // 'global_submap_poses'.
   transform::Rigid3d ComputeLocalToGlobalTransform(
@@ -240,7 +241,7 @@ class PoseGraph3D : public PoseGraph {
 
   // Whether the optimization has to be run before more data is added.
   bool run_loop_closure_ GUARDED_BY(mutex_) = false;
-
+  bool isGlobalMatch; //ADD BY LZY 20190327
   // Schedules optimization (i.e. loop closure) to run.
   void DispatchOptimization() REQUIRES(mutex_);
 

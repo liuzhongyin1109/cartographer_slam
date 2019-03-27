@@ -87,7 +87,7 @@ class PoseGraphInterface {
 
   // Waits for all computations to finish and computes optimized poses.
   virtual void RunFinalOptimization() = 0;
-
+  virtual void IsAddGlobalConstraint(bool& flag) = 0; //ADD BY LZY 20190327
   // Returns data for all submaps.
   virtual MapById<SubmapId, SubmapData> GetAllSubmapData() = 0;
 
