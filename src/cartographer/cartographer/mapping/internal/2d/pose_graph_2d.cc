@@ -206,13 +206,15 @@ void PoseGraph2D::ComputeConstraint(const NodeId& node_id,
           last_connection_time +
               common::FromSeconds(
                   options_.global_constraint_search_after_n_seconds())) {
-		if(isGlobalMatch == true)
-		{  
-			 //LOG(ERROR) << "add constraint local : isGlobalMatch =  "  <<  isGlobalMatch ;
-			 constraint_builder_.MaybeAddGlobalConstraint(
-       submap_id, submap_data_.at(submap_id).submap.get(), node_id,
-       trajectory_nodes_.at(node_id).constant_data.get());
-			 return;
+		if(isGlobalMatch)
+		{
+		  if(global_localization_samplers_[node_id.trajectory_id]->Pulse())
+		  {
+			  constraint_builder_.MaybeAddGlobalConstraint(
+         			submap_id, submap_data_.at(submap_id).submap.get(), node_id,
+         			trajectory_nodes_.at(node_id).constant_data.get());
+		  }
+		  return;
 		}
 		
     // If the node and the submap belong to the same trajectory or if there
